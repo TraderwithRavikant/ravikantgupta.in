@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Diary #001: How often does NIFTY's opening gap fill by the close? · Ravikant Gupta</title>
+<meta name="description" content="Small gaps usually close. Big gaps usually don&#x27;t.">
+<link rel="canonical" href="https://ravikantgupta.in/data-diary/001/">
+<meta property="og:site_name" content="Ravikant Gupta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Diary #001: How often does NIFTY&#x27;s opening gap fill by the close?">
+<meta property="og:description" content="Small gaps usually close. Big gaps usually don&#x27;t.">
+<meta property="og:url" content="https://ravikantgupta.in/data-diary/001/">
+<meta property="og:image" content="https://ravikantgupta.in/img/og/data-diary-001.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Ravikant Gupta" href="../../feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Caveat:wght@500;600;700&family=Great+Vibes&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=8ae989df">
+<script>(function(d){try{var t=localStorage.getItem('theme');if(t)d.setAttribute('data-theme',t);}catch(e){}if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('js');setTimeout(function(){if(!window.__siteReady)d.classList.remove('js');},4000);}})(document.documentElement);</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How often does NIFTY's opening gap fill by the close?", "description": "Small gaps usually close. Big gaps usually don't.", "datePublished": "2026-10-23", "url": "https://ravikantgupta.in/data-diary/001/", "author": {"@type": "Person", "name": "Ravikant Gupta", "url": "https://ravikantgupta.in/"}}</script>
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+  <div class="bar">
+    <a class="wordmark" href="../../" aria-label="Ravikant Gupta, home"><span class="R" aria-hidden="true">R</span><span class="rest" aria-hidden="true">avikant Gupta</span><svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 40 2, 90 9, 140 5 S 190 3, 198 6"/></svg></a>
+    <nav class="main" aria-label="Main"><ul><li><a href="../../lab/">Lab</a></li><li><a href="../../data-diary/" aria-current="page">Data Diary</a></li><li><a href="../../tools/">Tools</a></li><li><a href="../../shelf/">Shelf</a></li><li><a href="../../about/">About</a></li><li><a href="../../follow/">Follow</a></li></ul></nav>
+    <div class="tools">
+      <button class="ib" id="theme" type="button" aria-label="Switch between light and dark" title="Light / dark">
+        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="ib menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="Mobile"><ul><li><a href="../../">Home</a></li><li><a href="../../lab/">Lab</a></li><li><a href="../../data-diary/" aria-current="page">Data Diary</a></li><li><a href="../../tools/">Tools</a></li><li><a href="../../shelf/">Shelf</a></li><li><a href="../../about/">About</a></li><li><a href="../../follow/">Follow</a></li></ul></nav>
+</div></header>
+<main id="main">
+<div class="wrap narrow entry-wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Data Diary</a> / #001</nav>
+  <article class="page entry dd-entry">
+    <span class="label">Data Diary #001 · 23 Oct 2026</span>
+    <h1>How often does NIFTY's opening gap fill by the close?</h1>
+    <p class="finding">Small gaps usually close. Big gaps usually don't.</p>
+    <p class="meta">Data: my one-minute NIFTY futures data, near-month contract, 3 Aug 2018 to 25 Aug 2026</p>
+    <div class="prose"><p>Across 1,980 sessions since August 2018, NIFTY traded back to the previous day's close on 64% of them. But that average hides almost everything. Gaps under 0.25% filled 82% of the time. Gaps of 1% or more filled only 19% of the time.</p>
+<figure class="chart" aria-label="Gaps under 0.25%: 82% filled, 1,064 days. 0.25% to 0.5%: 55%, 496 days. 0.5% to 1%: 35%, 291 days. 1% or more: 19%, 129 days. All gaps: 64% of 1,980 days."><p class="chart-title">Share of opening gaps that filled by the close, by size of the gap</p><div class="bars" data-anim><div class="brow"><span class="bl">Under 0.25%</span><span class="bt"><span class="bf" style="--w:81.90%"></span><span class="bv">82% <small>of 1,064 days</small></span></span></div><div class="brow"><span class="bl">0.25% – 0.5%</span><span class="bt"><span class="bf" style="--w:55.20%"></span><span class="bv">55% <small>of 496 days</small></span></span></div><div class="brow"><span class="bl">0.5% – 1%</span><span class="bt"><span class="bf" style="--w:34.70%"></span><span class="bv">35% <small>of 291 days</small></span></span></div><div class="brow"><span class="bl">1% or more</span><span class="bt"><span class="bf" style="--w:19.40%"></span><span class="bv">19% <small>of 129 days</small></span></span></div><span class="avgline" style="--x:0.6420" aria-hidden="true"><span>all gaps: 64%</span></span></div><figcaption>NIFTY near-month futures, 1-minute bars, 3 Aug 2018 to 25 Aug 2026.</figcaption></figure>
+<div class="stats"><div><b>1,980</b><span>sessions with a gap</span></div><div><b>64%</b><span>filled by the close</span></div><div><b>09:22</b><span>typical fill time</span></div><div><b>73%</b><span>of fills done by 10:15</span></div></div>
+<h2 id="up-or-down-almost-the-same">Up or down, almost the same</h2>
+<p>Gap-ups and gap-downs behaved almost the same: 65% and 63% filled. The one difference was in the biggest gaps. Gap-downs of 1% or more filled 15% of the time and gap-ups 26%, but those are small groups (75 and 54 days), so I wouldn't lean on that gap.</p>
+<h2 id="when-the-fill-happens">When the fill happens</h2>
+<p>When a gap did fill, it usually filled early.</p>
+<ul><li>Half of all fills had happened by 09:22.</li><li>38% happened in the very first minute. 93% of those were gaps under 0.25%.</li><li>73% had happened by 10:15. Only 6% came after 14:00.</li><li>For gaps of 1% or more, the typical fill came much later, at 11:17.</li></ul>
+<h2 id="what-it-means-for-a-trader">What it means for a trader</h2>
+<p>"Gaps always fill" is half true. It is mostly true for small gaps and mostly false for big ones.</p>
+<p>So if a plan depends on a gap filling, the size of the gap is the first thing to check, before the trade and not after. And most of the fills that do happen come in the first hour.</p>
+<p>This is a description of how the market behaved. It is not a signal and not a strategy. I haven't tested whether trading it would make money after costs. That is a different question.</p>
+<h2 id="also-in-the-data">Also in the data</h2>
+<ul><li><strong>Year to year, the rate moved between 52% and 75%.</strong> Years with bigger gaps tended to fill less. In 2020 the typical gap was 0.40%; in 2025 it was 0.16%. But size doesn't explain all of the movement, so one year's number is not a rule.</li><li><strong>Monday gaps filled less often.</strong> These are the gaps that come after a weekend. For gaps of 0.25% or more, Mondays filled 36% of the time, against 40% to 55% on other days. This deserves its own entry before I say more.</li><li><strong>The largest gaps all came in March and April 2020.</strong> The biggest was −10.2% on 23 March 2020, and it didn't fill.</li></ul>
+<h2 id="method">Method</h2>
+<ul><li><strong>Data.</strong> My own one-minute NIFTY futures data. There is no spot data in the dataset, so the near-month monthly future stands in for the index.</li><li><strong>Previous close.</strong> The last trade of the same futures contract in the previous session. Using the same contract matters on the day after expiry: comparing the new month's open with the old month's close would create a fake gap from the difference in their premiums.</li><li><strong>Open.</strong> The first trade of the 09:15 one-minute bar.</li><li><strong>Filled.</strong> For a gap up, price traded down to the previous close at any minute before the close. For a gap down, it traded up to it.</li><li><strong>Sample.</strong> 1,983 regular sessions from 3 Aug 2018 to 25 Aug 2026. Three opened exactly flat, which leaves 1,980 gaps.</li><li><strong>Left out (13 days).</strong> The first day of the data, which has no previous close; eight Diwali Muhurat sessions; the NSE outage day (24 Feb 2021); two short special Saturday sessions (2 Mar and 18 May 2024); and 6 Jan 2020, where the data starts at 09:27. Each one is listed with its reason in the downloadable numbers.</li><li><strong>Checks.</strong> Seven days were recomputed straight from the raw files, including 13 March 2020 and 3 June 2024. All matched. On every roll day, the previous close came from a 15:29 trade, so none used a stale price.</li></ul>
+<h2 id="limitations">Limitations</h2>
+<ul><li><strong>Futures, not the index.</strong> Futures carry a premium and trade on their own. The NIFTY index itself may behave a little differently.</li><li><strong>The last trade, not the official close.</strong> NSE's official close is an average of the last half hour. I use the last trade at 15:29 so that every day is measured the same way.</li><li><strong>One index, one period.</strong> August 2018 to August 2026, including the 2020 crash. The past is not a promise about the future.</li><li><strong>"Filled" only means touched.</strong> It says nothing about what price did next, or whether anyone made money from it.</li><li><strong>Extra bars in recent files.</strong> From August 2026 the data has extra bars between 15:30 and 15:39, which I ignored. Keeping them changes 16 days and moves the overall rate from 64.2% to 64.1%.</li></ul></div>
+    <div class="entry-foot"><a class="btn small" href="../../data/data-diary-001.json" download>Download the numbers (JSON)</a><span class="muted small">Education only. A description of past market behaviour, not a signal.</span></div>
+  </article>
+  <nav class="entry-nav" aria-label="More entries"><span></span><span></span></nav>
+</div>
+</main>
+<footer class="site"><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="foot-sig" aria-hidden="true"><b>R</b>avikant Gupta</div><p class="muted" style="margin:10px 0 0">The working trader's view. Rules first.</p></div>
+    <nav aria-label="Footer"><ul><li><a href="../../">Home</a></li><li><a href="../../lab/">Lab</a></li><li><a href="../../data-diary/">Data Diary</a></li><li><a href="../../tools/">Tools</a></li><li><a href="../../shelf/">Shelf</a></li><li><a href="../../about/">About</a></li><li><a href="../../about/#how">How I work</a></li><li><a href="../../follow/">Follow</a></li><li><a href="../../disclaimer/">Disclaimer</a></li><li><a href="../../feed.xml">RSS</a></li></ul></nav>
+    <div>
+      <p class="disc">Education and personal analysis only. Not investment advice.</p>
+      <p class="muted small">Nothing here is a tip, a call or a recommendation to buy or sell anything. <a href="../../disclaimer/">Read the full disclaimer</a>.</p>
+    </div>
+  </div>
+  <div class="legal"><span>© 2026 Ravikant Gupta</span><span>Charts marked "concept sketch" explain an idea and use no market data</span></div>
+</div></footer>
+<script src="../../assets/site.js?v=8ae989df" defer></script>
+</body>
+</html>
