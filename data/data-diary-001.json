@@ -1,0 +1,473 @@
+{
+  "id": "001",
+  "question": "How often does NIFTY's opening gap fill by the close?",
+  "generated": "2026-10-23",
+  "data": {
+    "source": "Ravikant Gupta's own 1-minute NIFTY futures dataset (monthly contracts, one file per expiry)",
+    "instrument": "NIFTY near-month monthly futures, used as a stand-in for the index (no spot data in the dataset)",
+    "first_session": "2018-08-03",
+    "last_session": "2026-08-25",
+    "contracts_used": 97,
+    "cutoff": "2026-08-25"
+  },
+  "definitions": {
+    "previous_close": "Last traded price of the same futures contract in the previous market session.",
+    "open": "Open of the 09:15 one-minute bar.",
+    "gap_pct": "(open - previous close) / previous close x 100.",
+    "filled": "Gap up: any bar's low reaches the previous close that day. Gap down: any bar's high reaches it.",
+    "session": "09:15-15:29 bars. Bars after 15:29 are ignored (see sensitivity). Special sessions keep their own hours.",
+    "sample": "Regular full sessions only. Special and short sessions are excluded from the sample but still count as the previous session for the next day.",
+    "size_buckets": [
+      "under 0.25%",
+      "0.25% to 0.5%",
+      "0.5% to 1%",
+      "1% or more"
+    ]
+  },
+  "results": {
+    "sample_days": 1983,
+    "flat_opens": 3,
+    "gap_days": 1980,
+    "overall": {
+      "days": 1980,
+      "filled": 1271,
+      "fill_rate_pct": 64.2
+    },
+    "by_direction": {
+      "up": {
+        "days": 1090,
+        "filled": 709,
+        "fill_rate_pct": 65.0
+      },
+      "down": {
+        "days": 890,
+        "filled": 562,
+        "fill_rate_pct": 63.1
+      }
+    },
+    "by_size": {
+      "under 0.25%": {
+        "days": 1064,
+        "filled": 871,
+        "fill_rate_pct": 81.9
+      },
+      "0.25% to 0.5%": {
+        "days": 496,
+        "filled": 274,
+        "fill_rate_pct": 55.2
+      },
+      "0.5% to 1%": {
+        "days": 291,
+        "filled": 101,
+        "fill_rate_pct": 34.7
+      },
+      "1% or more": {
+        "days": 129,
+        "filled": 25,
+        "fill_rate_pct": 19.4
+      }
+    },
+    "by_size_and_direction": {
+      "under 0.25%": {
+        "up": {
+          "days": 579,
+          "filled": 473,
+          "fill_rate_pct": 81.7
+        },
+        "down": {
+          "days": 485,
+          "filled": 398,
+          "fill_rate_pct": 82.1
+        }
+      },
+      "0.25% to 0.5%": {
+        "up": {
+          "days": 296,
+          "filled": 166,
+          "fill_rate_pct": 56.1
+        },
+        "down": {
+          "days": 200,
+          "filled": 108,
+          "fill_rate_pct": 54.0
+        }
+      },
+      "0.5% to 1%": {
+        "up": {
+          "days": 161,
+          "filled": 56,
+          "fill_rate_pct": 34.8
+        },
+        "down": {
+          "days": 130,
+          "filled": 45,
+          "fill_rate_pct": 34.6
+        }
+      },
+      "1% or more": {
+        "up": {
+          "days": 54,
+          "filled": 14,
+          "fill_rate_pct": 25.9
+        },
+        "down": {
+          "days": 75,
+          "filled": 11,
+          "fill_rate_pct": 14.7
+        }
+      }
+    },
+    "by_year": {
+      "2018": {
+        "days": 97,
+        "filled": 56,
+        "fill_rate_pct": 57.7
+      },
+      "2019": {
+        "days": 244,
+        "filled": 182,
+        "fill_rate_pct": 74.6
+      },
+      "2020": {
+        "days": 250,
+        "filled": 156,
+        "fill_rate_pct": 62.4
+      },
+      "2021": {
+        "days": 246,
+        "filled": 162,
+        "fill_rate_pct": 65.9
+      },
+      "2022": {
+        "days": 247,
+        "filled": 147,
+        "fill_rate_pct": 59.5
+      },
+      "2023": {
+        "days": 244,
+        "filled": 156,
+        "fill_rate_pct": 63.9
+      },
+      "2024": {
+        "days": 246,
+        "filled": 176,
+        "fill_rate_pct": 71.5
+      },
+      "2025": {
+        "days": 247,
+        "filled": 154,
+        "fill_rate_pct": 62.3
+      },
+      "2026": {
+        "days": 159,
+        "filled": 82,
+        "fill_rate_pct": 51.6
+      }
+    },
+    "median_abs_gap_by_year_pct": {
+      "2018": 0.282,
+      "2019": 0.193,
+      "2020": 0.398,
+      "2021": 0.274,
+      "2022": 0.373,
+      "2023": 0.172,
+      "2024": 0.17,
+      "2025": 0.157,
+      "2026": 0.254
+    },
+    "by_weekday": {
+      "Monday": {
+        "days": 395,
+        "filled": 220,
+        "fill_rate_pct": 55.7
+      },
+      "Tuesday": {
+        "days": 399,
+        "filled": 273,
+        "fill_rate_pct": 68.4
+      },
+      "Wednesday": {
+        "days": 393,
+        "filled": 279,
+        "fill_rate_pct": 71.0
+      },
+      "Thursday": {
+        "days": 395,
+        "filled": 252,
+        "fill_rate_pct": 63.8
+      },
+      "Friday": {
+        "days": 394,
+        "filled": 243,
+        "fill_rate_pct": 61.7
+      }
+    },
+    "by_weekday_gaps_of_quarter_percent_or_more": {
+      "Monday": {
+        "days": 214,
+        "filled": 76,
+        "fill_rate_pct": 35.5
+      },
+      "Tuesday": {
+        "days": 176,
+        "filled": 82,
+        "fill_rate_pct": 46.6
+      },
+      "Wednesday": {
+        "days": 163,
+        "filled": 89,
+        "fill_rate_pct": 54.6
+      },
+      "Thursday": {
+        "days": 181,
+        "filled": 79,
+        "fill_rate_pct": 43.6
+      },
+      "Friday": {
+        "days": 180,
+        "filled": 72,
+        "fill_rate_pct": 40.0
+      }
+    },
+    "largest_gaps": [
+      {
+        "date": "2020-03-23",
+        "gap_pct": -10.15,
+        "filled": false
+      },
+      {
+        "date": "2020-03-13",
+        "gap_pct": -6.68,
+        "filled": true
+      },
+      {
+        "date": "2020-03-12",
+        "gap_pct": -4.91,
+        "filled": false
+      },
+      {
+        "date": "2020-03-16",
+        "gap_pct": -4.65,
+        "filled": false
+      },
+      {
+        "date": "2020-04-07",
+        "gap_pct": 4.22,
+        "filled": false
+      }
+    ],
+    "gaps_of_half_percent_or_more": {
+      "days": 420,
+      "filled": 126,
+      "fill_rate_pct": 30.0
+    },
+    "gaps_of_one_percent_or_more": {
+      "days": 129,
+      "filled": 25,
+      "fill_rate_pct": 19.4
+    },
+    "roll_days": {
+      "days": 94,
+      "filled": 56,
+      "fill_rate_pct": 59.6
+    },
+    "gap_size_pct": {
+      "median_abs": 0.227,
+      "p90_abs": 0.808,
+      "largest_up": 4.22,
+      "largest_down": -10.15
+    },
+    "fill_timing": {
+      "median_fill_time": "09:22",
+      "filled_in_first_bar_09_15_pct": 37.7,
+      "filled_by_09_30_pct": 55.5,
+      "filled_by_10_15_pct": 72.9,
+      "filled_after_14_00_pct": 5.7,
+      "note": "Shares of FILLED gaps. Times are the start of the 1-minute bar in which the fill happened.",
+      "median_fill_time_under_0.25pct": "09:15",
+      "median_fill_time_1pct_or_more": "11:17"
+    }
+  },
+  "sensitivity": {
+    "what": "Keeping the extra 15:30-15:39 bars present in the data from Aug 2026",
+    "days_changed": 16,
+    "dates": [
+      "2026-08-04",
+      "2026-08-05",
+      "2026-08-06",
+      "2026-08-07",
+      "2026-08-10",
+      "2026-08-11",
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-24",
+      "2026-08-25"
+    ],
+    "overall_if_kept": {
+      "days": 1980,
+      "filled": 1270,
+      "fill_rate_pct": 64.1
+    }
+  },
+  "excluded_days": [
+    {
+      "date": "2018-08-02",
+      "reason": "first day of the dataset (no previous close)"
+    },
+    {
+      "date": "2018-11-07",
+      "reason": "special one-hour session, Diwali Muhurat (17:30-18:29): used only as the next day's previous close"
+    },
+    {
+      "date": "2019-10-27",
+      "reason": "special one-hour session, Diwali Muhurat (18:15-19:15): used only as the next day's previous close"
+    },
+    {
+      "date": "2020-01-06",
+      "reason": "data starts at 09:27, so the true open is missing"
+    },
+    {
+      "date": "2020-11-14",
+      "reason": "special one-hour session, Diwali Muhurat (18:15-19:14): used only as the next day's previous close"
+    },
+    {
+      "date": "2021-02-24",
+      "reason": "NSE outage day: no trading from about 11:40 until 16:10 (per the bars), so not comparable; its 16:59 close is used as the next day's previous close"
+    },
+    {
+      "date": "2021-11-04",
+      "reason": "special one-hour session, Diwali Muhurat (18:15-19:14): used only as the next day's previous close"
+    },
+    {
+      "date": "2022-10-24",
+      "reason": "special one-hour session, Diwali Muhurat (18:15-19:14): used only as the next day's previous close"
+    },
+    {
+      "date": "2023-11-12",
+      "reason": "special one-hour session, Diwali Muhurat (18:15-19:14): used only as the next day's previous close"
+    },
+    {
+      "date": "2024-03-02",
+      "reason": "short special session (105 bars, 09:15-12:29): used only as the next day's previous close"
+    },
+    {
+      "date": "2024-05-18",
+      "reason": "short special session (105 bars, 09:15-12:29): used only as the next day's previous close"
+    },
+    {
+      "date": "2024-11-01",
+      "reason": "special one-hour session, Diwali Muhurat (18:00-18:59): used only as the next day's previous close"
+    },
+    {
+      "date": "2025-10-21",
+      "reason": "special one-hour session, Diwali Muhurat (13:45-14:44): used only as the next day's previous close"
+    }
+  ],
+  "spot_checks": [
+    {
+      "date": "2019-09-23",
+      "contract": "NIFTY19SEP26",
+      "prev_last_bar": "15:29 close 11305.15",
+      "first_bar": "09:15 open 11499.9",
+      "day_low_high": [
+        11441.0,
+        11682.4
+      ],
+      "gap_pct": 1.7227,
+      "filled": false,
+      "fill_time": null,
+      "recomputed_matches": true
+    },
+    {
+      "date": "2023-05-04",
+      "contract": "NIFTY23MAY25",
+      "prev_last_bar": "15:29 close 18147.3",
+      "first_bar": "09:15 open 18119.85",
+      "day_low_high": [
+        18113.1,
+        18315.9
+      ],
+      "gap_pct": -0.1513,
+      "filled": true,
+      "fill_time": "09:16",
+      "recomputed_matches": true
+    },
+    {
+      "date": "2025-08-22",
+      "contract": "NIFTY25AUG28",
+      "prev_last_bar": "15:29 close 25112.4",
+      "first_bar": "09:15 open 25094.0",
+      "day_low_high": [
+        24887.4,
+        25099.0
+      ],
+      "gap_pct": -0.0733,
+      "filled": false,
+      "fill_time": null,
+      "recomputed_matches": true
+    },
+    {
+      "date": "2025-04-09",
+      "contract": "NIFTY25APR24",
+      "prev_last_bar": "15:29 close 22653.45",
+      "first_bar": "09:15 open 22544.0",
+      "day_low_high": [
+        22405.05,
+        22544.0
+      ],
+      "gap_pct": -0.4831,
+      "filled": false,
+      "fill_time": null,
+      "recomputed_matches": true
+    },
+    {
+      "date": "2024-12-16",
+      "contract": "NIFTY24DEC26",
+      "prev_last_bar": "15:29 close 24860.0",
+      "first_bar": "09:15 open 24800.0",
+      "day_low_high": [
+        24660.15,
+        24833.0
+      ],
+      "gap_pct": -0.2414,
+      "filled": false,
+      "fill_time": null,
+      "recomputed_matches": true
+    },
+    {
+      "date": "2020-03-13",
+      "contract": "NIFTY20MAR26",
+      "prev_last_bar": "15:29 close 9580.0",
+      "first_bar": "09:15 open 8939.85",
+      "day_low_high": [
+        8299.0,
+        10129.75
+      ],
+      "gap_pct": -6.6822,
+      "filled": true,
+      "fill_time": "10:48",
+      "recomputed_matches": true
+    },
+    {
+      "date": "2024-06-03",
+      "contract": "NIFTY24JUN27",
+      "prev_last_bar": "15:29 close 22703.85",
+      "first_bar": "09:15 open 23501.65",
+      "day_low_high": [
+        23161.3,
+        23844.0
+      ],
+      "gap_pct": 3.5139,
+      "filled": false,
+      "fill_time": null,
+      "recomputed_matches": true
+    }
+  ],
+  "note": "Numbers behind Data Diary #001 on ravikantgupta.in. Education only, not investment advice."
+}
