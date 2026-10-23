@@ -46,7 +46,7 @@
     txt(sBars, W, top - 4, 'where you started', { 'text-anchor': 'end', 'font-family': 'JetBrains Mono', 'font-size': 9, fill: 'var(--teal)' });
     for (var i = 0; i <= n; i++) {
       var h = H * Math.pow(1 - r, i);
-      el('rect', { x: i * (bw + gap), y: top + H - h, width: bw, height: h, rx: 2, fill: i === n ? 'var(--hl)' : 'var(--violet-soft)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, sBars);
+      el('rect', { x: i * (bw + gap), y: top + H - h, width: bw, height: h, rx: 2, fill: i === n ? 'var(--hl)' : 'var(--bar)', stroke: 'var(--edge-hi)', 'stroke-width': 1.2 }, sBars);
     }
     $('sMsg').textContent = need <= 0.12 ? 'small risk keeps you in the game' : need <= 0.35 ? 'recoverable, but it will test you' : 'this is how accounts end';
   }
