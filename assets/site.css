@@ -135,29 +135,60 @@ section.blk.tight{padding:36px 0 72px}
 .js .check li.on .box path{stroke-dashoffset:0}
 .check .foot{font-size:.9rem;color:var(--muted);margin:0}
 
-/* story (home) */
+/* story (home): "from a hunch to a written rule" */
 .story{padding:30px 0 10px}
-.story-grid{display:grid;grid-template-columns:1fr;gap:0}
-@media (min-width:980px){.story-grid{grid-template-columns:7fr 5fr;gap:48px}}
-.story-grid>*{min-width:0}
-.fig-col{position:sticky;top:72px;z-index:2;align-self:start;padding:8px 0 12px;background:linear-gradient(var(--paper) 90%,transparent)}
-.fig-col figure{margin:0}
-@media (min-width:980px){.fig-col{top:104px;background:none;padding:0}}
-.fig-col svg{display:block;width:100%;height:auto;overflow:visible}
-#storyChart text{paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
-.fig-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:4px}
-.dots{display:flex;gap:5px}.dots i{width:22px;height:5px;border-radius:3px;background:var(--line);transition:background .3s}.dots i.on{background:var(--violet)}
-.fig-cap{font:400 .72rem/1.5 var(--mono);color:var(--muted);margin-top:8px}
-.steps{position:relative;z-index:1;padding:20px 0 26vh}
-.step{min-height:62vh;display:flex;align-items:center}
-.step .page{width:100%;box-shadow:3px 3px 0 var(--shadow);transition:opacity .4s,transform .4s}
-.js .step .page{opacity:.35;transform:scale(.98)}
-.js .step.on .page{opacity:1;transform:none}
-.step b.n{font:700 1.7rem/1 var(--hand);color:var(--violet);display:block;margin-bottom:4px}
-.step p{margin:0;font-size:1.1rem}
-@media (max-width:979px){.step{min-height:52vh;align-items:flex-end}.fig-col svg{max-height:36vh}.fig-col .page{padding:12px}}
-.reduce .step,.no-js .step{min-height:0;margin:14px 0}.reduce .steps{padding-bottom:0}.reduce .fig-col{position:static}
-.reduce .step .page{opacity:1;transform:none}
+.rb{padding:0;overflow:hidden}
+.rb-tabs{position:relative;display:flex;gap:0;border-bottom:1.5px solid var(--edge);overflow-x:auto;scrollbar-width:none}
+.rb-tabs::-webkit-scrollbar{display:none}
+.rb-tab{appearance:none;flex:1 0 auto;display:flex;align-items:center;gap:10px;padding:14px 18px;border:0;border-right:1px dashed var(--line);background:transparent;color:var(--muted);font:600 .95rem/1.1 var(--sans);cursor:pointer;text-align:left;white-space:nowrap}
+.rb-tab:last-child{border-right:0}
+.rb-tab span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1.5px solid currentColor;font:700 .8rem/1 var(--mono);flex:none}
+.rb-tab:hover{color:var(--ink)}
+.rb-tab[aria-selected="true"]{color:var(--ink);background:var(--hl-soft)}
+.rb-tab[aria-selected="true"] span{background:var(--hl);border-color:var(--on-hl);color:var(--on-hl)}
+.rb-tab.done span{background:var(--violet);border-color:var(--violet);color:var(--on-violet)}
+.rb-grid{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:980px){.rb-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
+.rb-grid>*{min-width:0}
+.rb-fig{margin:0;padding:22px 22px 16px;display:flex;flex-direction:column;gap:14px}
+.fig-cap{font:400 .72rem/1.5 var(--mono);color:var(--muted);margin-top:auto}
+.rb-stages{display:grid;gap:26px}
+@media (min-width:980px){.live .rb-stages{min-height:300px}}
+.rb-stage{animation:rb-in .35s ease both}
+@keyframes rb-in{from{opacity:0;transform:translateY(6px)}}
+.rb-stage+.rb-stage{border-top:1.5px dashed var(--line);padding-top:22px}.live .rb-stage+.rb-stage{border-top:0;padding-top:0}
+.rb-hunch{font:700 clamp(2.2rem,5.4vw,3.6rem)/1.05 var(--hand);color:var(--violet);margin:14px 0 8px;transform:rotate(-1.5deg);transform-origin:left}
+.rb-hunch.sm{font-size:clamp(1.9rem,4.4vw,2.7rem)}
+.rb-word{background:none;color:inherit;text-decoration:underline wavy var(--teal) 2px;text-underline-offset:6px}
+.rb-small{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+.rb-defs{display:grid;gap:10px;margin:14px 0 0}
+.rb-defs div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;align-items:baseline;padding:10px 12px;border:1.5px dashed var(--line);border-radius:8px}
+.rb-defs dt{font:700 1.35rem/1 var(--hand);color:var(--teal)}
+.rb-defs dd{margin:0;font-size:1rem}
+.rb-code{list-style:none;margin:14px 0 0;padding:14px 16px;border:1.5px dashed var(--edge);border-radius:10px;background:var(--hl-soft);font:500 .92rem/1.75 var(--mono)}
+.rb-code li{display:grid;grid-template-columns:3.6em minmax(0,1fr)}
+.rb-code b{color:var(--violet)}
+.rb-code i{font-style:normal;padding:0 .2em;border-bottom:2px solid var(--violet);color:var(--violet)}
+.rb-checks{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.rb-checks li{font:600 .82rem/1 var(--mono);border:1.5px solid var(--edge);border-radius:999px;padding:8px 12px 8px 10px;background:var(--card)}
+.rb-checks li::before{content:"✓ ";color:var(--teal);font-weight:800}
+.rb-result{margin-top:18px;padding:14px 16px;border:1.5px solid var(--edge);border-radius:10px;background:var(--paper)}
+.rb-bar{display:grid;grid-template-columns:7.5em minmax(0,1fr) 3em;gap:10px;align-items:center;margin-top:10px;font:600 .82rem/1.2 var(--mono)}
+.rb-track{height:14px;border:1.5px solid var(--edge);border-radius:999px;overflow:hidden;background:var(--card)}
+.rb-track span{display:block;height:100%;background:var(--bar-hi)}
+.rb-bar:last-of-type .rb-track span{background:var(--bar)}
+.rb-bar b{text-align:right}
+.rb-verdict{margin:12px 0 0;font:700 1.35rem/1.2 var(--hand);color:var(--violet)}
+.rb-verdict a{font:600 .9rem/1 var(--sans);margin-left:8px}.rb-side{display:flex;flex-direction:column;gap:16px;padding:18px;border-top:1.5px dashed var(--line)}
+@media (min-width:980px){.rb-side{border-top:0;border-left:1.5px dashed var(--line);padding:24px}}
+.rb-panel h3{font:800 1.45rem/1.15 var(--sans);letter-spacing:-.025em;margin:6px 0 8px}
+.rb-panel p{margin:0;font-size:1.06rem}
+.rb-panels{min-height:0}
+@media (min-width:980px){.rb-panels{min-height:210px}}
+.rb-panel+.rb-panel{margin-top:18px}.live .rb-panel+.rb-panel{margin-top:0}
+.rb-nav{display:none;gap:8px}.live .rb-nav{display:flex}
+.rb-nav button:disabled{opacity:.4;cursor:default;transform:none;box-shadow:none}
+@media (max-width:640px){.rb-tab{padding:12px 14px;font-size:.88rem}.rb-fig{padding:14px 10px 10px}}
 .rule{margin-top:12px;padding:12px 14px;border:1.5px dashed var(--edge);border-radius:10px;background:var(--hl-soft);font:500 .88rem/1.7 var(--mono)}
 .rule b{color:var(--violet)}
 
